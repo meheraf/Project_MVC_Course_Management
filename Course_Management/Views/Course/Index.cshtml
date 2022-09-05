@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Course_Management.Models.Course>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Courses</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="@Url.Content(item.Thumbnail)" alt="@item.CourseTitle" class="myImage" />
+                    <div class="middle">
+                        @Html.ActionLink("READ MORE","Details","Course",new { id=item.CourseId},new { @class="teal lighten-1 white-text",style="padding:4px;"})
+                    </div>
+                    <a class="btn-floating halfway-fab waves-effect waves-light grey" style="overflow:no-display"><i class="material-icons">person</i></a>
+                </div>
+                <div class="card-content">
+                    <p class="center flow-text"><strong>@item.CourseTitle</strong></p>
+                </div>
+                <div class="card-action">
+                    <i class="material-icons">person</i><span> 1</span>
+                    @if (item.Cost == 0)
+                    {
+                        <span class="right green-text">Free</span>
+                    }
+                    else
+                    {
+                        <span class="right">Tk.@item.Cost</span>
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

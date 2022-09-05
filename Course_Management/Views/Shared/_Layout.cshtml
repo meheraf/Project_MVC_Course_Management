@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@Page.Title</title>
+    <link href="~/content/Site.css" rel="stylesheet" />
+    <link href="~/content/materialize/css/materialize.min1.0.0.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <div class="navbar-fixed">
+        @Html.Partial("_Navbar")
+    </div>
+    <div class="container">
+        @RenderBody()
+        <hr />
+    </div>
+    <footer class="teal lighten-1 page-footer">
+        <div class="container">
+            
+            <p><strong>Trainee Name : </strong>Md Meheraf Hossain</p>
+            <p><strong>Batch : </strong>PGD-01</p>
+            <p class="teal-text text-accent-1 footer-copyright">&copy; @DateTime.Now.Year - WUST-PGD-Program <a class="grey-text text-lighten-4 right"><i class="material-icons right">drafts</i></a></p>
+        </div>
+    </footer>
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/materialize/materialize.min.1.0.0.js"></script>
+    <script src="~/Scripts/Site.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
